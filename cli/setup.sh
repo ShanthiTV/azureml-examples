@@ -26,7 +26,7 @@ az extension add -n ml -y
 
 ## For backward compatibility - running on old subscription
 # <set_variables>
-GROUP="MLOps-git-rg"
+GROUP="MLOps0306_01RG"
 LOCATION="eastus"
 WORKSPACE="MLOps-git-ws"
 # </set_variables>
