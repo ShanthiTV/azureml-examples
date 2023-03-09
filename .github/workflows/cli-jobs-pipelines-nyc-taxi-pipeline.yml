@@ -27,12 +27,10 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZUREML_CREDENTIALS}}
-    - name: setup-cli
-      run: |
-          bash setup.sh
+    - name: setup
+      run: bash setup.sh
       working-directory: cli
       continue-on-error: true
     - name: run job
-      run: |
-          bash -x ../../../run-job.sh pipeline.yml
+      run: bash -x ../../../run-job.sh pipeline.yml
       working-directory: cli/jobs/pipelines/nyc-taxi
