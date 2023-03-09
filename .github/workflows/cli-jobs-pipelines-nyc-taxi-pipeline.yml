@@ -29,12 +29,14 @@ jobs:
         creds: ${{secrets.AZUREML_CREDENTIALS}}
     - name: setup
       run: |
+          source "${{ github.workspace }}/infra/sdk_helpers.sh";
           source "${{ github.workspace }}/infra/init_environment.sh";
           bash setup.sh
       working-directory: cli
       continue-on-error: true
     - name: run job
       run: |
+          source "${{ github.workspace }}/infra/sdk_helpers.sh";
           source "${{ github.workspace }}/infra/init_environment.sh";
           bash -x ../../../run-job.sh pipeline.yml
       working-directory: cli/jobs/pipelines/nyc-taxi
